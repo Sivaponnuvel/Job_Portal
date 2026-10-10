@@ -75,7 +75,7 @@ export default function RegisterPage() {
                                 Username
                             </label>
                             <input name='username' placeholder="Enter username"
-                                className="mt-1 w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-600 focus:ring-1 focus:ring-blue-200 outline-none" />
+                                className="mt-1 w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-600 focus:ring-1 focus:ring-blue-200 outline-none" required/>
                         </div>
 
                         <div>
@@ -83,7 +83,7 @@ export default function RegisterPage() {
                                 Email ID
                             </label>
                             <input name='email' type="email" placeholder="Enter email"
-                                className="mt-1 w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-600 focus:ring-1 focus:ring-blue-200 outline-none" />
+                                className="mt-1 w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-600 focus:ring-1 focus:ring-blue-200 outline-none" required/>
                         </div>
 
                         <div>
@@ -91,7 +91,7 @@ export default function RegisterPage() {
                                 Password
                             </label>
                             <input name='password' type="password" placeholder="Minimum 6 characters"
-                                className="mt-1 w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-600 focus:ring-1 focus:ring-blue-200 outline-none" />
+                                className="mt-1 w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-600 focus:ring-1 focus:ring-blue-200 outline-none" required/>
                         </div>
 
                         <button disabled={isPending} type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2.5 rounded transition">
