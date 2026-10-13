@@ -24,9 +24,9 @@ export default function JobListPage() {
             </nav>
 
             <div className="flex items-center gap-4">
-                <span className="text-sm text-gray-600">Hello, Logesh</span>
+                <span className="text-sm text-gray-600">Hello, Siva</span>
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-700 text-sm font-semibold text-white">
-                L
+                S
                 </div>
             </div>
             </div>
