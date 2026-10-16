@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
-from .serializers import RegisterSerializer, JobSerializer
+from .serializers import RegisterSerializer, JobSerializer, ApplicationSerializer
 from .models import Job
 
 @api_view(['GET'])
@@ -34,3 +34,11 @@ def job_list(request):
     serializer = JobSerializer(jobs, many=True)
 
     return Response(serializer.data)
+
+@api_view(['POST'])
+def apply_job(request):
+    serializer = ApplicationSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response({"message": "Application Submitted"}, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
