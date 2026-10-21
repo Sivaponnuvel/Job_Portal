@@ -1,4 +1,5 @@
 import React, { useActionState } from 'react'
+import { NavLink } from 'react-router-dom';
 
 async function loginAction(_, formData) {
     const json = Object.fromEntries(formData);
@@ -30,10 +31,10 @@ export default function LoginPage() {
                 </div>
 
                 <nav className="hidden md:flex gap-6 text-sm font-medium text-gray-700">
-                    <a href="#" className="hover:text-blue-700">Jobs</a>
+                    <NavLink to={"/jobs"}  className="hover:text-blue-700">Jobs</NavLink>
                     <a href="#" className="hover:text-blue-700">Companies</a>
                     <a href="#" className="hover:text-blue-700">Services</a>
-                    <a href="#" className="hover:text-blue-700">Register</a>
+                    <NavLink to={"/register"} className="hover:text-blue-700">Register</NavLink>
                 </nav>
             </div>
         </header>
@@ -99,9 +100,9 @@ export default function LoginPage() {
 
             <p className="text-sm text-center text-gray-600">
                 New to JobPortal?
-                <a href="#" className="text-blue-700 font-medium hover:underline">
+                <NavLink to={"/register"} className="text-blue-700 font-medium hover:underline">
                     Register here
-                </a>
+                </NavLink>
             </p>
         </form>
         </section>

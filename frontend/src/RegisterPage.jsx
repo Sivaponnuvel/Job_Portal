@@ -1,5 +1,6 @@
 import React from 'react'
 import { useActionState } from 'react'
+import { NavLink } from 'react-router-dom';
 
 async function registerAction(_, formData) {
     const json = Object.fromEntries(formData);
@@ -32,10 +33,10 @@ export default function RegisterPage() {
                     </div>
 
                     <nav className="hidden md:flex gap-6 text-sm font-medium text-gray-700">
-                        <a href="#" className="hover:text-blue-700">Jobs</a>
+                        <NavLink to={"/jobs"} className="hover:text-blue-700">Jobs</NavLink>
                         <a href="#" className="hover:text-blue-700">Companies</a>
                         <a href="#" className="hover:text-blue-700">Services</a>
-                        <a href="#" className="hover:text-blue-700">Login</a>
+                        <NavLink to={"/login"} className="hover:text-blue-700">Login</NavLink>
                     </nav>
                 </div>
             </header>
@@ -107,9 +108,9 @@ export default function RegisterPage() {
 
                         <p className="text-sm text-center text-gray-600">
                             Already registered?
-                            <a href="#" className="text-blue-700 font-medium hover:underline">
+                            <NavLink to={"/login"} className="text-blue-700 font-medium hover:underline">
                                 Login here
-                            </a>
+                            </NavLink>
                         </p>
 
                     </form>
