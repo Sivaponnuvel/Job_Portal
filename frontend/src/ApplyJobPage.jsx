@@ -13,24 +13,37 @@ export default function ApplyJobPage() {
     const username = localStorage.getItem("userName")
 
     async function applyJobAction(_, formData) {
-    const res = await fetch("http://127.0.0.1:8000/apply", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            job: jobId,
-            applicant: userId
-        })
-    });
-    
-    const data = await res.json();
+    try {
+        const res = await fetch("http://127.0.0.1:8000/apply", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                job: Number(jobId),
+                applicant: Number(userId),
+            }),
+        });
 
-    if(res.ok){
-        return {message: data.message, success: true}
+        const data = await res.json();
+
+        console.log("Status:", res.status);
+        console.log("Response:", data);
+
+        return {
+            message: Array.isArray(data.message)
+                ? data.message[0]
+                : data.message || "You have already applied",
+            success: res.ok,
+        };
+    } catch (error) {
+        console.error("Apply API error:", error);
+
+        return {
+            message: "Something went wrong. Please try again.",
+            success: false,
+        };
     }
-    return {message: data.message, success: false}
-    
 }
 
   return ( 
