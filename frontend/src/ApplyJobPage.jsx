@@ -1,16 +1,26 @@
 import React from 'react'
 import { useActionState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 
-async function applyJobAction(_, formData) {
+
+export default function ApplyJobPage() {
+    const [result, formAction, isPending] = useActionState(applyJobAction, null, {
+            withPending: true
+    })
+
+    const {jobId} = useParams();
+    const userId = localStorage.getItem("userId")
+    const username = localStorage.getItem("userName")
+
+    async function applyJobAction(_, formData) {
     const res = await fetch("http://127.0.0.1:8000/apply", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            job: 1,
-            applicant: 1
+            job: jobId,
+            applicant: userId
         })
     });
     
@@ -23,10 +33,6 @@ async function applyJobAction(_, formData) {
     
 }
 
-export default function ApplyJobPage() {
-    const [result, formAction, isPending] = useActionState(applyJobAction, null, {
-            withPending: true
-    })
   return ( 
     <div className="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
 
@@ -41,9 +47,9 @@ export default function ApplyJobPage() {
             </nav>
 
             <div className="flex items-center gap-4">
-                <span className="text-sm text-gray-600">Hello, Siva</span>
+                <span className="text-sm text-gray-600">Hello, {username}</span>
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-700 text-sm font-semibold text-white">
-                S
+                {username[0].toUpperCase()}
                 </div>
             </div>
             </div>

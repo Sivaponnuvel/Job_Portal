@@ -111,7 +111,7 @@ export default function LoginPage() {
 
             <p className="text-sm text-center text-gray-600">
                 New to JobPortal?
-                <NavLink to={"/register"} className="text-blue-700 font-medium hover:underline">
+                <NavLink to={"/"} className="text-blue-700 font-medium hover:underline">
                     Register here
                 </NavLink>
             </p>
