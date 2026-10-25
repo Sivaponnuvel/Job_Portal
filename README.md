@@ -1,8 +1,8 @@
-# 💼 JobPortal – Full Stack Job Portal
+# 💼 JobPortal – Full Stack Project
 
 ## 📌 Project Description
 
-This is a **JobPortal** web application built using **React.js, Vite, Tailwind CSS, Django, Django REST Framework, and PostgreSQL**.
+This is a **JobPortal** web application built using **React.js, Django REST Framework, and PostgreSQL**.
 
 The project provides a simple job application platform where users can register, log in, browse available job opportunities, and apply for jobs. It integrates a React frontend with a Django REST API to manage user information, job listings, and job applications.
 
@@ -51,7 +51,7 @@ The project provides a simple job application platform where users can register,
 
 * React.js
 * Vite
-* JavaScript (ES6+)
+* JavaScript
 * Tailwind CSS
 * React Router DOM
 * Python
@@ -248,7 +248,6 @@ http://localhost:5173/
 * ➕ Recruiters can post and manage jobs
 * 🛡️ Protected routes and API authorization
 * 🧪 Automated testing
-* 🌐 Deploy the application online
 
 ---
 
